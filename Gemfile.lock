@@ -131,6 +131,8 @@ PLATFORMS
 DEPENDENCIES
   logstash-devutils
   logstash-filter-cusum!
+  rack
+  rspec
 
 BUNDLED WITH
-   2.2.12
+   2.2.13
