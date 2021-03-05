@@ -1,0 +1,68 @@
+:plugin: cusum
+:type: filter
+// Update header with plugin name
+
+///////////////////////////////////////////
+START - GENERATED VARIABLES, DO NOT EDIT!
+///////////////////////////////////////////
+:version: %VERSION%
+:release_date: %RELEASE_DATE%
+:changelog_url: %CHANGELOG_URL%
+:include_path: ../../../../logstash/docs/include
+///////////////////////////////////////////
+END - GENERATED VARIABLES, DO NOT EDIT!
+///////////////////////////////////////////
+
+[id="plugins-{type}s-{plugin}"]
+
+=== Cusum filter plugin
+
+include::{include_path}/plugin_header.asciidoc[]
+
+==== Description
+
+Cumulative sum filter plugin. Uses an in-memory dictionary to store values.
+
+
+[id="plugins-{type}s-{plugin}-options"]
+
+==== Cumsum Filter Configuration Options
+
+[cols="<,<,<",options="header",]
+|=======================================================================
+|Setting |Input type|Required
+| <<plugins-{type}s-{plugin}-fields>> |<<array,array>>|Yes
+| <<plugins-{type}s-{plugin}-add_values>> |<<hash,hash>>|No
+| <<plugins-{type}s-{plugin}-initial_values>> |<<hash,hash>>|No
+|=======================================================================
+
+[id="plugins-{type}s-{plugin}-fields"]
+===== `fields` 
+
+  * Value type is <<array,array>>
+  * No Default value
+  * Required
+
+This array contains the name of the stored fields. These will be put in the event.
+
+[id="plugins-{type}s-{plugin}-add_values"]
+===== `add_values` 
+
+  * Value type is <<hash,hash>>
+  * Default value is 0 for each field
+  
+A dictionary to indicate the value to add for each of the stored fields.
+
+[id="plugins-{type}s-{plugin}-initial_values"]
+===== `initial_values` 
+
+  * Value type is <<hash,hash>>
+  * Default value is 0 for each field
+  
+This dictionary should contain the initial values for each field.
+
+// The full list of Value Types is here: 
+// https://www.elastic.co/guide/en/logstash/current/configuration-file-structure.html
+
+[id="plugins-{type}s-{plugin}-common-options"]
+include::{include_path}/{type}.asciidoc[]
